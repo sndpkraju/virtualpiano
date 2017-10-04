@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="ragatest()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var ragas = {};
+
+ragas.mohanamC = new Array("C", "D", "E", "G", "A")
+ragas.mohanamCsh = new Array("Csh", "Dsh", "F", "Gsh", "Ash")
+
+function ragatest(){
+	var ragaName = window.prompt("Enter raga name")
+	var x = ragas[ragaName]
+	document.getElementById("demo").innerHTML =
+        x
+};
+        
+</script>
+
+</body>
+</html>
+

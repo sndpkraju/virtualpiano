@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+ 	<title>App</title>
+ 	<script src="audioManager.js"></script>
+ 	<script src="touchEvents.js"></script>
+ 	<link href="piano.css" rel="StyleSheet" />
+ 	<script src="jquery-3.2.1.js"></script>
+ 	<script> //var notes = ["hi", "hello"]; </script>
+ 	<script src="piano.js"></script>
+ 	
+ 	
+ </head>
+ <body>
+ 	<script type = "text/javascript">
+ 	 var notes = ["hi", "hello"];
+ 	function raga(){
+ 		//alert("im here");
+		var ragas = {};
+		ragas.mohanamC = ["3C", "3D", "3E", "3G", "3A"];
+		ragas.mohanamCsh = ["3C#", "3D#", "3F", "3G#", "3A#"];
+		//alert("im here");
+		var control = document.getElementById("chosenraga");
+		//alert(control);
+		var selectedValue = control.options[control.selectedIndex].value;
+		//alert(selectedValue);
+		var hidvar = document.getElementById('<%=hiddenraga.ClientID%>');
+		//alert(ragas[selectedValue]);
+		hidvar = ragas[selectedValue];
+		notes =  ragas[selectedValue];
+		console.log("these are:" + notes);
+		//alert("im here" + hidvar);
+
+		if certain notes are in ragas
+			then use jquery to change the notes in css
+
+	};
+ 	</script>
+ 	<div id="app">
+ 		<!-- <header>App</header> -->
+ 		<div id="main"></div>
+ 		<footer></footer>
+ 	
+ 	<div id="keyboard" align = "center">
+ 			<div id="backboard"></div>
+ 			<div class="keys">
+		 	<div id = "oC" data-note="2C" class="piano-key white oC"></div>
+		 	<div id = "oCsh" data-note="2C#" class="piano-key black oCsh"></div>
+		 	<div id = "oD" data-note="2D" class="piano-key white oD"></div>
+		 	<div id = "oDsh" data-note="2D#" class="piano-key black oDsh"></div>
+		 	<div id = "oE" data-note="2E" class="piano-key white oE"></div>
+		 	<div id = "oF" data-note="2F" class="piano-key white oF"></div>
+		 	<div id = "oFsh" data-note="2F#" class="piano-key black oFsh"></div>
+		 	<div id = "oG" data-note="2G" class="piano-key white oG"></div>
+		 	<div id = "oGsh" data-note="2G#" class="piano-key black oGsh"></div>
+		 	<div id = "oA" data-note="2A" class="piano-key white oA"></div>
+		 	<div id = "oAsh" data-note="2A#" class="piano-key black oAsh"></div>
+		 	<div id = "oB" data-note="2B" class="piano-key white oB"></div>
+		 	<div id = "twC" data-note="3C" class="piano-key white twC"></div>
+		 	<div id = "twCsh" data-note="3C#" class="piano-key black twCsh"></div>
+		 	<div id = "twD" data-note="3D" class="piano-key white twD"></div>
+		 	<div id = "twDsh" data-note="3D#" class="piano-key black twDsh"></div>
+		 	<div id = "twE" data-note="3E" class="piano-key white twE"></div>
+		 	<div id = "twF" data-note="3F" class="piano-key white twF"></div>
+		 	<div id = "twFsh" data-note="3F#" class="piano-key black twFsh"></div>
+		 	<div id = "twG" data-note="3G" class="piano-key white twG"></div>
+		 	<div id = "twGsh" data-note="3G#" class="piano-key black twGsh"></div>
+		 	<div id = "twA" data-note="3A" class="piano-key white twA"></div>
+		 	<div id = "twAsh" data-note="3A#" class="piano-key black twAsh"></div>
+		 	<div id = "twB" data-note="3B" class="piano-key white twB"></div>
+		 	<div id = "thC" data-note="4C" class="piano-key white thC"></div>
+		 	<div id = "thCsh" data-note="4C#" class="piano-key black thCsh"></div>
+		 	<div id = "thD" data-note="4D" class="piano-key white thD"></div>
+		 	<div  data-note="4D#" class="piano-key black thDsh"></div>
+		 	<div  data-note="4E" class="piano-key white thE"></div>
+		 	<div  data-note="4F" class="piano-key white thF"></div>
+		 	<div  data-note="4F#" class="piano-key black thFsh"></div>
+		 	<div  data-note="4G" class="piano-key white thG"></div>
+		 	<div  data-note="4G#" class="piano-key black thGsh"></div>
+		 	<div  data-note="4A" class="piano-key white thA"></div>
+		 	<div  data-note="4A#" class="piano-key black thAsh"></div>
+		 	<div i data-note="4B" class="piano-key white thB"></div>
+		 	<div  data-note="5C" class="piano-key white fC"></div>
+		 	<div id="backboard"></div>
+ 		</div>
+ 		</div>
+ 		<form hidden><input type="text" id = "hiddenraga" ></form>
+ 		<select id = "chosenraga" onchange="if (this.selectedIndex) raga();">
+  			<option value="mohanamC">MohanamC</option>
+  			<option value="mohanamCsh">MohanamCsh</option>
+		</select>
+	</div>
+ </body>
+</html>
